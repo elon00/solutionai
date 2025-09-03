@@ -1,0 +1,15 @@
+{
+  "asset_id": 123456789,
+  "creator": "SIMULATED_ADDRESS_123456789",
+  "params": {
+    "total": 21000000000000,
+    "decimals": 6,
+    "default_frozen": false,
+    "unit_name": "SOLAI",
+    "asset_name": "Solution AI Token",
+    "url": "https://solutionai.com",
+    "metadata_hash": null
+  },
+  "deployment_type": "simulated",
+  "network": "testnet"
+}

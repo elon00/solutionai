@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg)](https://www.docker.com/)
+[![Algorand](https://img.shields.io/badge/blockchain-Algorand-blue.svg)](https://www.algorand.com/)
 
 > **Enterprise-Ready AI-Powered Ticket Classification System**
 
@@ -61,6 +62,14 @@ Check out the live demo: [https://v0-ai-support-website.vercel.app/#demo](https:
 - **Code Coverage**: >90% test coverage with detailed reporting
 - **Security Scanning**: Automated vulnerability scanning
 - **Performance Testing**: Load testing and performance benchmarks
+
+### ⛓️ Blockchain Integration
+- **Algorand Smart Contracts**: Decentralized ticket management and NFT issuance
+- **SOLAI Token**: 21 trillion supply utility token for rewards and governance
+- **NFT Tickets**: Unique digital assets for premium support tickets
+- **Para Wallet Integration**: Seamless blockchain wallet connectivity
+- **Immutable Records**: Cryptographic verification of ticket history
+- **Tokenized Economy**: Incentive system with SOLAI rewards
 
 ## Features
 

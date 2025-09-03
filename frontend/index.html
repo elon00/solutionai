@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solution AI - Ticket Triage SaaS</title>
+    <title>Solution AI - Blockchain-Enhanced Ticket Triage DApp</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@algo/para-wallet-connect@1.0.0/dist/index.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Solution AI Ticket Triage</h1>
-            <p>AI-powered ticket classification and summarization</p>
+            <h1>Solution AI Ticket Triage DApp</h1>
+            <p>AI-powered ticket classification with blockchain security and NFT rewards</p>
+            <div id="wallet-section" class="wallet-section">
+                <button id="connect-wallet" class="btn wallet-btn">Connect Para Wallet</button>
+                <div id="wallet-info" class="wallet-info hidden">
+                    <p>Connected: <span id="wallet-address"></span></p>
+                    <p>SOLAI Balance: <span id="token-balance">0</span></p>
+                </div>
+            </div>
         </header>
         <main>
             <section class="triage-section">
@@ -38,9 +46,34 @@
                 <button id="load-recent" class="btn">Load Recent</button>
                 <div id="recent-list" class="recent-list"></div>
             </section>
+            <section class="blockchain-section">
+                <h2>Blockchain Features</h2>
+                <div class="blockchain-features">
+                    <div class="feature">
+                        <h3>Create NFT Ticket</h3>
+                        <p>Turn your classified ticket into a unique NFT for permanent record</p>
+                        <button id="create-nft" class="btn" disabled>Create NFT</button>
+                    </div>
+                    <div class="feature">
+                        <h3>Token Rewards</h3>
+                        <p>Earn SOLAI tokens for quality tickets and platform participation</p>
+                        <button id="claim-rewards" class="btn" disabled>Claim Rewards</button>
+                    </div>
+                    <div class="feature">
+                        <h3>My NFTs</h3>
+                        <p>View your ticket NFTs and token balance</p>
+                        <button id="view-nfts" class="btn" disabled>View NFTs</button>
+                    </div>
+                </div>
+                <div id="nft-result" class="nft-result hidden">
+                    <h3>NFT Created!</h3>
+                    <p>Asset ID: <span id="nft-id"></span></p>
+                    <p>Transaction: <a id="nft-tx-link" href="#" target="_blank">View on Explorer</a></p>
+                </div>
+            </section>
         </main>
         <footer>
-            <p>&copy; 2023 Solution AI. Powered by AI for efficient ticket management.</p>
+            <p>&copy; 2023 Solution AI. Blockchain-enhanced AI ticket management on Algorand.</p>
         </footer>
     </div>
     <script src="app.js"></script>

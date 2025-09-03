@@ -1,0 +1,15 @@
+{
+  "app_id": 987654321,
+  "app_address": "SIMULATED_APP_ADDRESS_987654321",
+  "creator": "SIMULATED_CREATOR_ADDRESS",
+  "network": "testnet",
+  "deployment_type": "simulated",
+  "global_schema": {
+    "num_uints": 2,
+    "num_byte_slices": 10
+  },
+  "local_schema": {
+    "num_uints": 1,
+    "num_byte_slices": 1
+  }
+}
