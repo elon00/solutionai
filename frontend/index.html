@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution AI - Ticket Triage SaaS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Solution AI Ticket Triage</h1>
+            <p>AI-powered ticket classification and summarization</p>
+        </header>
+        <main>
+            <section class="triage-section">
+                <h2>Classify Ticket</h2>
+                <form id="triage-form">
+                    <div class="form-group">
+                        <label for="api-key">API Key:</label>
+                        <input type="text" id="api-key" placeholder="Enter your API key" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-text">Ticket Text:</label>
+                        <textarea id="ticket-text" rows="5" placeholder="Paste your ticket text here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Classify Ticket</button>
+                </form>
+                <div id="result" class="result hidden">
+                    <h3>Result:</h3>
+                    <p><strong>Label:</strong> <span id="label"></span></p>
+                    <p><strong>Confidence:</strong> <span id="confidence"></span></p>
+                    <p><strong>Summary:</strong> <span id="summary"></span></p>
+                </div>
+            </section>
+            <section class="recent-section">
+                <h2>Recent Tickets</h2>
+                <button id="load-recent" class="btn">Load Recent</button>
+                <div id="recent-list" class="recent-list"></div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Solution AI. Powered by AI for efficient ticket management.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

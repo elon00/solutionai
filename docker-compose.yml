@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - ALLOWED_API_KEYS=${ALLOWED_API_KEYS}
+      - DATABASE_URL=postgresql://solution_user:solution_pass@postgres:5432/solution_ai
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+    depends_on:
+      - postgres
+      - jaeger
+    networks:
+      - solution_network
+
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=solution_ai
+      - POSTGRES_USER=solution_user
+      - POSTGRES_PASSWORD=solution_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - solution_network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+    networks:
+      - solution_network
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"
+      - "14268:14268"
+    networks:
+      - solution_network
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - solution_network
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - solution_network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - solution_network
+
+volumes:
+  postgres_data:
+  grafana_data:
+
+networks:
+  solution_network:
+    driver: bridge

@@ -1,0 +1,83 @@
+{
+  "family": "solution-ai-backend",
+  "taskRoleArn": "arn:aws:iam::ACCOUNT-ID:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::ACCOUNT-ID:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "backend",
+      "image": "ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/solutionai/backend:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "DATABASE_URL",
+          "value": "postgresql://solution_user:PASSWORD@solution-ai-db.xxxxxx.us-east-1.rds.amazonaws.com:5432/solution_ai"
+        },
+        {
+          "name": "REDIS_URL",
+          "value": "redis://solution-ai-redis.xxxxxx.ng.0001.use1.cache.amazonaws.com:6379"
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "value": "sk-your-production-key"
+        },
+        {
+          "name": "ANTHROPIC_API_KEY",
+          "value": "sk-ant-your-production-key"
+        },
+        {
+          "name": "STRIPE_SECRET_KEY",
+          "value": "sk_live_your-stripe-key"
+        },
+        {
+          "name": "STRIPE_WEBHOOK_SECRET",
+          "value": "whsec_your-webhook-secret"
+        },
+        {
+          "name": "ALLOWED_API_KEYS",
+          "value": "prod_key_1,prod_key_2,prod_key_3"
+        },
+        {
+          "name": "LOG_LEVEL",
+          "value": "INFO"
+        },
+        {
+          "name": "ENABLE_CACHING",
+          "value": "true"
+        },
+        {
+          "name": "ENABLE_METRICS",
+          "value": "true"
+        },
+        {
+          "name": "ENABLE_TRACING",
+          "value": "true"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/solution-ai-backend",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "healthCheck": {
+        "command": ["CMD-SHELL", "curl -f http://localhost:8000/health/ || exit 1"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 60
+      }
+    }
+  ]
+}
