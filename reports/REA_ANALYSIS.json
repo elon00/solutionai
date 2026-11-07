@@ -1,0 +1,164 @@
+{
+  "engine": "REA_Reverse_Engineer_Anything",
+  "status": "STRUCTURE_RECONSTRUCTED",
+  "analyzed_files": 52,
+  "manifest": {
+    "COMMERCIALIZATION_READY.md": {
+      "bytes": 9912
+    },
+    "docker-compose.yml": {
+      "bytes": 1764
+    },
+    "GITHUB_README.md": {
+      "bytes": 11634
+    },
+    "nginx.conf": {
+      "bytes": 1040
+    },
+    "README.md": {
+      "bytes": 7543
+    },
+    "backend\\Dockerfile": {
+      "bytes": 213
+    },
+    "backend\\main.py": {
+      "bytes": 8002
+    },
+    "backend\\requirements.txt": {
+      "bytes": 602
+    },
+    "blockchain\\README.md": {
+      "bytes": 3112
+    },
+    "blockchain\\requirements.txt": {
+      "bytes": 44
+    },
+    "commercialization\\README.md": {
+      "bytes": 9264
+    },
+    "config\\production.env": {
+      "bytes": 9396
+    },
+    "frontend\\app.js": {
+      "bytes": 8263
+    },
+    "frontend\\Dockerfile": {
+      "bytes": 146
+    },
+    "frontend\\index.html": {
+      "bytes": 4021
+    },
+    "frontend\\styles.css": {
+      "bytes": 2039
+    },
+    "k8s\\deployment.yml": {
+      "bytes": 5432
+    },
+    "marketing\\README.md": {
+      "bytes": 11265
+    },
+    "monitoring\\prometheus.yml": {
+      "bytes": 864
+    },
+    "scripts\\deploy.sh": {
+      "bytes": 9344
+    },
+    "scripts\\rea_inspector.py": {
+      "bytes": 1485
+    },
+    "scripts\\rsi_engine.py": {
+      "bytes": 2039
+    },
+    "scripts\\setup-github.sh": {
+      "bytes": 12216
+    },
+    "tests\\reality_check_harness.py": {
+      "bytes": 1250
+    },
+    ".github\\workflows\\ci-cd.yml": {
+      "bytes": 3350
+    },
+    ".github\\workflows\\qmoosa-rsi-rea-sync.yml": {
+      "bytes": 531
+    },
+    "backend\\app\\auth.py": {
+      "bytes": 2038
+    },
+    "backend\\app\\config.py": {
+      "bytes": 2439
+    },
+    "backend\\app\\database.py": {
+      "bytes": 851
+    },
+    "backend\\app\\main.py": {
+      "bytes": 2575
+    },
+    "backend\\app\\middleware.py": {
+      "bytes": 1294
+    },
+    "backend\\app\\models.py": {
+      "bytes": 3679
+    },
+    "backend\\app\\schemas.py": {
+      "bytes": 2924
+    },
+    "backend\\app\\__init__.py": {
+      "bytes": 55
+    },
+    "backend\\tests\\test_api.py": {
+      "bytes": 10363
+    },
+    "backend\\tests\\__init__.py": {
+      "bytes": 14
+    },
+    "backend\\app\\routes\\admin.py": {
+      "bytes": 5163
+    },
+    "backend\\app\\routes\\health.py": {
+      "bytes": 3371
+    },
+    "backend\\app\\routes\\tickets.py": {
+      "bytes": 3381
+    },
+    "backend\\app\\routes\\__init__.py": {
+      "bytes": 20
+    },
+    "backend\\app\\services\\ai_service.py": {
+      "bytes": 3992
+    },
+    "backend\\app\\services\\ticket_service.py": {
+      "bytes": 4078
+    },
+    "backend\\app\\services\\__init__.py": {
+      "bytes": 18
+    },
+    "blockchain\\scripts\\contract_deployment.json": {
+      "bytes": 333
+    },
+    "blockchain\\scripts\\create_token.py": {
+      "bytes": 3200
+    },
+    "blockchain\\scripts\\deploy_contract.py": {
+      "bytes": 3986
+    },
+    "blockchain\\scripts\\solai_token.json": {
+      "bytes": 367
+    },
+    "blockchain\\smart_contracts\\ticket_manager.py": {
+      "bytes": 3500
+    },
+    "blockchain\\smart_contracts\\ticket_manager_approval.teal": {
+      "bytes": 1624
+    },
+    "blockchain\\smart_contracts\\ticket_manager_clear.teal": {
+      "bytes": 32
+    },
+    "deploy\\aws\\README.md": {
+      "bytes": 6819
+    },
+    "deploy\\aws\\task-definition.json": {
+      "bytes": 2331
+    }
+  },
+  "timestamp": 1794039982
+}
