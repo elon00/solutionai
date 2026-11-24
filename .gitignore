@@ -349,3 +349,5 @@ docker-volumes/
 # Local configuration
 config/local/
 *.local
+# Lean 4 build artifacts
+lean_verify/.lake/
